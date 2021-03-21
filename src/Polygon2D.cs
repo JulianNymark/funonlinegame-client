@@ -63,10 +63,7 @@ public class Polygon2D : Godot.Polygon2D
 	// Called every frame. 'delta' is the elapsed time since the previous frame.
 	public override void _Process(float delta)
 	{
-		client.Poll();
-		this.Position += new Vector2(1, 1);
-		// fetch new position from some stream! (websocket, Enet...)
-		// assign position to the position of this Node
+		client.Poll(); // actually makes client calls
 	}
 }
 
