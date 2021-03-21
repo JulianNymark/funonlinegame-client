@@ -1,9 +1,7 @@
 using Godot;
-using System;
-using System.Collections.Generic;
 using System.Diagnostics;
 
-public class Polygon2D : Godot.Polygon2D
+public class WebsocketManager : Godot.Node2D
 {
 	private string SERVER_URL = "ws://localhost:8765";
 	private WebSocketClient client = null;
@@ -57,7 +55,10 @@ public class Polygon2D : Godot.Polygon2D
 		Debug.WriteLine("hello from csharp!");
 		this.ConnectToServer();
 
-		this.Position += new Vector2(0, 0);
+        // create test player (non-player controlled & server moves it in a circle)
+		var playerScene = ResourceLoader.Load<PackedScene>("res://scenes/Player.tscn");
+		var playerInstance = playerScene.Instance();
+        this.AddChild(playerInstance);
 	}
 
 	// Called every frame. 'delta' is the elapsed time since the previous frame.
