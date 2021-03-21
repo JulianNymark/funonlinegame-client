@@ -1,0 +1,21 @@
+[gd_scene load_steps=2 format=2]
+
+[ext_resource path="res://Polygon2D.cs" type="Script" id=1]
+
+[node name="Node2D" type="Node2D"]
+
+[node name="RichTextLabel" type="RichTextLabel" parent="."]
+margin_left = 462.0
+margin_top = 246.0
+margin_right = 526.0
+margin_bottom = 310.0
+text = "HELLO WORLD!"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="playerpolygon" type="Polygon2D" parent="."]
+position = Vector2( 40, 198 )
+scale = Vector2( 0.766667, 0.507246 )
+polygon = PoolVector2Array( 698.391, 287.829, 732.304, 331.2, 721.87, 402.171, 672.304, 414, 641, 382, 654.044, 307.543 )
+script = ExtResource( 1 )
